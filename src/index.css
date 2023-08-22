@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&family=Roboto:wght@100;400;700&display=swap');
+
+@font-face {
+  font-family: 'SF UI Text';
+  font-style: normal;
+  font-weight: 400;
+  src: local('SF UI Text Regular'), url('fonts/SFUIText-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SF UI Text';
+  font-style: normal;
+  font-weight: 300;
+  src: local('SF UI Text Light'), url('fonts/SFUIText-Light.woff') format('woff');
+}
+  
+@font-face {
+  font-family: 'SF UI Text';
+  font-style: normal;
+  font-weight: 500;
+  src: local('SF UI Text Medium'), url('fonts/SFUIText-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SF UI Text';
+  font-style: normal;
+  font-weight: 600;
+  src: local('SF UI Text Semibold'), url('fonts/SFUIText-Semibold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SF UI Text';
+  font-style: normal;
+  font-weight: 700;
+  src: local('SF UI Text Bold'), url('fonts/SFUIText-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SF UI Text';
+  font-style: normal;
+  font-weight: 900;
+  src: local('SF UI Text Heavy'), url('fonts/SFUIText-Heavy.woff') format('woff');
+}
+
+body {
+  margin: 0;
+  font-family: "SF UI Text", "Open Sans", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, p {
+  margin: 0;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

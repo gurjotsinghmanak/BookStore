@@ -1,0 +1,70 @@
+{
+  "root": true,
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "requireConfigFile": false,
+    "babelOptions": {
+      "presets": ["@babel/preset-react"]
+    }
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": ["node_modules", "./src"],
+        "extensions": [".js"]
+      }
+    }
+  },
+  "extends": ["airbnb", "prettier"],
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "globals": {
+    "moment": true
+  },
+  "plugins": ["react", "prettier", "jsx-a11y", "import", "flowtype", "react-hooks"],
+  "rules": {
+    "max-len": [
+      "error",
+      { "code": 120, "comments": 120, "ignoreTemplateLiterals": true, "ignoreStrings": true }
+    ],
+    "no-alert": 0,
+    "quotes": [2, "double"],
+    "prefer-template": "off",
+    "no-param-reassign": ["error", { "props": false }],
+    "no-shadow": ["error", { "hoist": "all" }],
+    "default-param-last": ["error"],
+    "no-unused-expressions": ["error", { "allowShortCircuit": true }],
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": false, "optionalDependencies": false, "peerDependencies": false}],
+
+    "import/prefer-default-export": 0,
+    "react/jsx-no-bind": "off",
+    "react/jsx-filename-extension": "off",
+    "react/jsx-props-no-spreading": [
+      "error",
+      {
+        "custom": "ignore",
+        "explicitSpread": "ignore"
+      }
+    ],
+    "react/forbid-prop-types": 0,
+    "jsx-a11y/label-has-associated-control": ["error", {
+      "required": {
+        "some": ["nesting", "id"]
+      }
+    }],
+    "jsx-a11y/label-has-for": ["error", {
+      "required": {
+        "some": ["nesting", "id"]
+      }
+    }],
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": ["arrow-function", "function-declaration"],
+        "unnamedComponents": "arrow-function"
+      }
+    ]
+  }
+}
