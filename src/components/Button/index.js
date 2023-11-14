@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 
 import { Container } from "./styles";
 
-function Button({ children, color, variant, ...props }) {
+function Button({ children, color, variant, disabled, ...props }) {
   return (
-    <Container color={color} $variant={variant} {...props}>
+    <Container color={color} $variant={variant} disabled={disabled} {...props}>
       {children}
     </Container>
   );
@@ -14,12 +14,14 @@ function Button({ children, color, variant, ...props }) {
 Button.propTypes = {
   children: PropTypes.node.isRequired,
   color: PropTypes.string,
-  variant: PropTypes.string
+  variant: PropTypes.string,
+  disabled: PropTypes.bool
 };
 
 Button.defaultProps = {
   color: "",
-  variant: ""
+  variant: "",
+  disabled: false
 };
 
 export default Button;

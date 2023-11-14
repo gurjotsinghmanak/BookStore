@@ -9,8 +9,9 @@ export const commonStyles = () =>
     transition: all 250ms ease;
   `;
 
-const variantStyles = ({ $variant }) =>
+const variantStyles = ({ $variant, disabled }) =>
   $variant === "contained" &&
+  !disabled &&
   css`
     box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.1), 0px 2px 2px 0px rgba(0, 0, 0, 0.1),
       0px 1px 5px 0px rgba(0, 0, 0, 0.1);
@@ -20,9 +21,10 @@ const variantStyles = ({ $variant }) =>
     }
   `;
 
-const colorStyles = ({ color, $variant }) =>
+const colorStyles = ({ color, $variant, disabled }) =>
   (color === "red" &&
     $variant === "outlined" &&
+    !disabled &&
     css`
       border: 1px solid ${colors.red1};
       background-color: ${colors.white};
@@ -34,6 +36,7 @@ const colorStyles = ({ color, $variant }) =>
     `) ||
   (color === "primary" &&
     $variant === "contained" &&
+    !disabled &&
     css`
       background-color: ${colors.primary};
       color: ${colors.white};
@@ -43,6 +46,7 @@ const colorStyles = ({ color, $variant }) =>
     `) ||
   (color === "secondary" &&
     $variant === "contained" &&
+    !disabled &&
     css`
       background-color: ${colors.secondary};
       color: ${colors.white};
@@ -51,8 +55,18 @@ const colorStyles = ({ color, $variant }) =>
       }
     `);
 
+const disabledStyles = ({ disabled, $variant }) =>
+  disabled &&
+  $variant === "contained" &&
+  css`
+    background-color: ${colors.gray1};
+    color: ${colors.white};
+    cursor: not-allowed;
+  `;
+
 export const Container = styled("button")`
   ${commonStyles}
   ${variantStyles}
   ${colorStyles}
+  ${disabledStyles}
 `;

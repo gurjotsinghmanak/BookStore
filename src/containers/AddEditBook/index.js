@@ -55,6 +55,7 @@ function AddEditBook({ open, book, handleSubmit, onClose }) {
             color="secondary"
             variant="contained"
             onClick={() => handleSubmit({ id: book.id, name, price: parseFloat(price), category, description })}
+            disabled={!name || !price || !category || !description}
           >
             Save
           </Button>
